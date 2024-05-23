@@ -28,8 +28,7 @@ TODO: Replace this with a description of the modules in this repo.
 ## Overview
 * [terraform-ibm-sw-common-services](#terraform-ibm-sw-common-services)
 * [Examples](./examples)
-    * [Advanced example](./examples/advanced)
-    * [Basic example](./examples/basic)
+    * [Basic example of using cert-manager](./examples/cert_manager)
 * [Contributing](#contributing)
 <!-- END OVERVIEW HOOK -->
 
@@ -95,7 +94,9 @@ statement instead the previous block.
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.0, <1.7.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.1.0 |
+| <a name="requirement_ibm"></a> [ibm](#requirement\_ibm) | >= 1.64.0, < 2.0.0 |
+| <a name="requirement_kubernetes"></a> [kubernetes](#requirement\_kubernetes) | >= 2.0.0 |
 
 ### Modules
 
@@ -103,11 +104,32 @@ No modules.
 
 ### Resources
 
-No resources.
+| Name | Type |
+|------|------|
+| [kubernetes_manifest.ibm_cert_manager_catalog_source](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/manifest) | resource |
+| [kubernetes_manifest.ibm_cert_manager_operator_group](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/manifest) | resource |
+| [kubernetes_manifest.ibm_cert_manager_subscription](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/manifest) | resource |
+| [kubernetes_manifest.ibm_licensing_service_catalog_source](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/manifest) | resource |
+| [kubernetes_manifest.ibm_licensing_service_operator_group](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/manifest) | resource |
+| [kubernetes_manifest.ibm_licensing_service_subscription](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/manifest) | resource |
+| [kubernetes_namespace.ibm_cert_manager_namespace](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/namespace) | resource |
+| [kubernetes_namespace.ibm_licensing_service_namespace](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/namespace) | resource |
 
 ### Inputs
 
-No inputs.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_cert_manager_catalog_source_image"></a> [cert\_manager\_catalog\_source\_image](#input\_cert\_manager\_catalog\_source\_image) | Source image for the catalog source | `string` | `"icr.io/cpopen/ibm-cert-manager-operator-catalog"` | no |
+| <a name="input_cert_manager_namespace"></a> [cert\_manager\_namespace](#input\_cert\_manager\_namespace) | Name for the cert manager namespace | `string` | `"ibm-cert-manager"` | no |
+| <a name="input_cert_manager_subscription_channel"></a> [cert\_manager\_subscription\_channel](#input\_cert\_manager\_subscription\_channel) | Channel of the licensing service subscription | `string` | `"v4.2"` | no |
+| <a name="input_client_certificate"></a> [client\_certificate](#input\_client\_certificate) | The base64-encoded value of the client certificate | `string` | n/a | yes |
+| <a name="input_client_key"></a> [client\_key](#input\_client\_key) | The base64-encoded value of the client key | `string` | n/a | yes |
+| <a name="input_host"></a> [host](#input\_host) | The hostname of the cluster | `string` | n/a | yes |
+| <a name="input_ibmcloud_api_key"></a> [ibmcloud\_api\_key](#input\_ibmcloud\_api\_key) | IBM Cloud API key | `string` | n/a | yes |
+| <a name="input_ibmcloud_region"></a> [ibmcloud\_region](#input\_ibmcloud\_region) | IBM Cloud region where all resources will be deployed | `string` | n/a | yes |
+| <a name="input_licensing_catalog_source_image"></a> [licensing\_catalog\_source\_image](#input\_licensing\_catalog\_source\_image) | Source image for the catalog source | `string` | `"icr.io/cpopen/ibm-licensing-catalog"` | no |
+| <a name="input_licensing_namespace"></a> [licensing\_namespace](#input\_licensing\_namespace) | Name for the licensing namespace | `string` | `"ibm-licensing"` | no |
+| <a name="input_licensing_subscription_channel"></a> [licensing\_subscription\_channel](#input\_licensing\_subscription\_channel) | Channel of the licensing service subscription | `string` | `"v4.1"` | no |
 
 ### Outputs
 
