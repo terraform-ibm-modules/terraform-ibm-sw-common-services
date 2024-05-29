@@ -23,22 +23,10 @@ variable "cert_manager_namespace" {
 ####################
 # Cluster variables
 ####################
-variable "host" {
+variable "cluster_name" {
   type        = string
-  default     = "https://c117-e.us-south.containers.cloud.ibm.com:31085"
-  description = "The hostname of the cluster"
-}
-
-variable "client_certificate" {
-  type        = string
-  default     = "LS0tincrediblylongclientcertificateLS0tCg=="
-  description = "The base64-encoded value of the client certificate"
-}
-
-variable "client_key" {
-  type        = string
-  default     = "LS0tincrediblylongclientkeyLS0tLQo="
-  description = "The base64-encoded value of the client key"
+  description = "The name or ID of the cluster to be used"
+  default     = "my-cluster-name"
 }
 
 variable "ibmcloud_api_key" {

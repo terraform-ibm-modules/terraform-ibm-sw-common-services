@@ -37,19 +37,9 @@ variable "cert_manager_namespace" {
 ####################
 # Cluster variables
 ####################
-variable "host" {
+variable "cluster_name" {
   type        = string
-  description = "The hostname of the cluster"
-}
-
-variable "client_certificate" {
-  type        = string
-  description = "The base64-encoded value of the client certificate"
-}
-
-variable "client_key" {
-  type        = string
-  description = "The base64-encoded value of the client key"
+  description = "The name or ID of the cluster to be used"
 }
 
 variable "ibmcloud_api_key" {

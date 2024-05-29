@@ -3,9 +3,9 @@
 ########################################################################################################################
 
 provider "kubernetes" {
-  host               = var.host
-  client_certificate = base64decode(var.client_certificate)
-  client_key         = base64decode(var.client_key)
+  host               = data.ibm_container_cluster_config.cluster_config.host
+  client_certificate = data.ibm_container_cluster_config.cluster_config.admin_certificate
+  client_key         = data.ibm_container_cluster_config.cluster_config.admin_key
 }
 
 provider "ibm" {

@@ -1,6 +1,10 @@
 ########################################################################################################################
 # Cert-Manager deployment
 ########################################################################################################################
+data "ibm_container_cluster_config" "cluster_config" {
+  cluster_name_id = var.cluster_name
+  admin           = true
+}
 
 resource "kubernetes_namespace" "ibm_cert_manager_namespace" {
   metadata {

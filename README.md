@@ -114,6 +114,7 @@ No modules.
 | [kubernetes_manifest.ibm_licensing_service_subscription](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/manifest) | resource |
 | [kubernetes_namespace.ibm_cert_manager_namespace](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/namespace) | resource |
 | [kubernetes_namespace.ibm_licensing_service_namespace](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/namespace) | resource |
+| [ibm_container_cluster_config.cluster_config](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/container_cluster_config) | data source |
 
 ### Inputs
 
@@ -122,9 +123,7 @@ No modules.
 | <a name="input_cert_manager_catalog_source_image"></a> [cert\_manager\_catalog\_source\_image](#input\_cert\_manager\_catalog\_source\_image) | Source image for the catalog source | `string` | `"icr.io/cpopen/ibm-cert-manager-operator-catalog"` | no |
 | <a name="input_cert_manager_namespace"></a> [cert\_manager\_namespace](#input\_cert\_manager\_namespace) | Name for the cert manager namespace | `string` | `"ibm-cert-manager"` | no |
 | <a name="input_cert_manager_subscription_channel"></a> [cert\_manager\_subscription\_channel](#input\_cert\_manager\_subscription\_channel) | Channel of the licensing service subscription | `string` | `"v4.2"` | no |
-| <a name="input_client_certificate"></a> [client\_certificate](#input\_client\_certificate) | The base64-encoded value of the client certificate | `string` | n/a | yes |
-| <a name="input_client_key"></a> [client\_key](#input\_client\_key) | The base64-encoded value of the client key | `string` | n/a | yes |
-| <a name="input_host"></a> [host](#input\_host) | The hostname of the cluster | `string` | n/a | yes |
+| <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | The name or ID of the cluster to be used | `string` | n/a | yes |
 | <a name="input_ibmcloud_api_key"></a> [ibmcloud\_api\_key](#input\_ibmcloud\_api\_key) | IBM Cloud API key | `string` | n/a | yes |
 | <a name="input_ibmcloud_region"></a> [ibmcloud\_region](#input\_ibmcloud\_region) | IBM Cloud region where all resources will be deployed | `string` | n/a | yes |
 | <a name="input_licensing_catalog_source_image"></a> [licensing\_catalog\_source\_image](#input\_licensing\_catalog\_source\_image) | Source image for the catalog source | `string` | `"icr.io/cpopen/ibm-licensing-catalog"` | no |
