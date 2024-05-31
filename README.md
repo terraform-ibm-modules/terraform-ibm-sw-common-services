@@ -28,7 +28,7 @@ TODO: Replace this with a description of the modules in this repo.
 ## Overview
 * [terraform-ibm-sw-common-services](#terraform-ibm-sw-common-services)
 * [Examples](./examples)
-    * [Basic example of using cert-manager](./examples/cert_manager)
+    * [Basic example of using cert-manager](./examples/basic)
 * [Contributing](#contributing)
 <!-- END OVERVIEW HOOK -->
 
@@ -124,6 +124,8 @@ No modules.
 | <a name="input_cert_manager_namespace"></a> [cert\_manager\_namespace](#input\_cert\_manager\_namespace) | Name for the cert manager namespace | `string` | `"ibm-cert-manager"` | no |
 | <a name="input_cert_manager_subscription_channel"></a> [cert\_manager\_subscription\_channel](#input\_cert\_manager\_subscription\_channel) | Channel of the licensing service subscription | `string` | `"v4.2"` | no |
 | <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | The name or ID of the cluster to be used | `string` | n/a | yes |
+| <a name="input_enable_ibm_cert_manager"></a> [enable\_ibm\_cert\_manager](#input\_enable\_ibm\_cert\_manager) | Option to deploy cert-manager when running terraform | `bool` | `false` | no |
+| <a name="input_enable_ibm_licensing"></a> [enable\_ibm\_licensing](#input\_enable\_ibm\_licensing) | Option to deploy licensing when running terraform | `bool` | `false` | no |
 | <a name="input_ibmcloud_api_key"></a> [ibmcloud\_api\_key](#input\_ibmcloud\_api\_key) | IBM Cloud API key | `string` | n/a | yes |
 | <a name="input_ibmcloud_region"></a> [ibmcloud\_region](#input\_ibmcloud\_region) | IBM Cloud region where all resources will be deployed | `string` | n/a | yes |
 | <a name="input_licensing_catalog_source_image"></a> [licensing\_catalog\_source\_image](#input\_licensing\_catalog\_source\_image) | Source image for the catalog source | `string` | `"icr.io/cpopen/ibm-licensing-catalog"` | no |

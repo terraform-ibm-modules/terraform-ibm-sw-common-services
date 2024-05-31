@@ -1,10 +1,12 @@
 resource "kubernetes_namespace" "ibm_licensing_service_namespace" {
+  count = var.enable_ibm_licensing ? 1 : 0
   metadata {
     name = var.licensing_namespace
   }
 }
 
 resource "kubernetes_manifest" "ibm_licensing_service_operator_group" {
+  count = var.enable_ibm_licensing ? 1 : 0
   manifest = {
     "apiVersion" = "operators.coreos.com/v1"
     "kind"       = "OperatorGroup"
@@ -21,6 +23,7 @@ resource "kubernetes_manifest" "ibm_licensing_service_operator_group" {
 }
 
 resource "kubernetes_manifest" "ibm_licensing_service_subscription" {
+  count = var.enable_ibm_licensing ? 1 : 0
   manifest = {
     "apiVersion" = "operators.coreos.com/v1alpha1"
     "kind"       = "Subscription"
@@ -44,6 +47,7 @@ resource "kubernetes_manifest" "ibm_licensing_service_subscription" {
 }
 
 resource "kubernetes_manifest" "ibm_licensing_service_catalog_source" {
+  count = var.enable_ibm_licensing ? 1 : 0
   manifest = {
     "apiVersion" = "operators.coreos.com/v1alpha1"
     "kind"       = "CatalogSource"

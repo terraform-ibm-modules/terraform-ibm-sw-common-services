@@ -51,3 +51,18 @@ variable "ibmcloud_region" {
   type        = string
   description = "IBM Cloud region where all resources will be deployed"
 }
+
+####################
+# Optional variables
+####################
+variable "enable_ibm_cert_manager" {
+  type        = bool
+  default     = false
+  description = "Option to deploy cert-manager when running terraform"
+}
+
+variable "enable_ibm_licensing" {
+  type        = bool
+  default     = false
+  description = "Option to deploy licensing when running terraform"
+}

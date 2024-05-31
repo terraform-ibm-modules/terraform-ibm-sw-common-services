@@ -1,10 +1,12 @@
 resource "kubernetes_namespace" "ibm_cert_manager_namespace" {
+  count = var.enable_ibm_cert_manager ? 1 : 0
   metadata {
     name = var.cert_manager_namespace
   }
 }
 
 resource "kubernetes_manifest" "ibm_cert_manager_operator_group" {
+  count = var.enable_ibm_cert_manager ? 1 : 0
   manifest = {
     "apiVersion" = "operators.coreos.com/v1alpha2"
     "kind"       = "OperatorGroup"
@@ -16,6 +18,7 @@ resource "kubernetes_manifest" "ibm_cert_manager_operator_group" {
 }
 
 resource "kubernetes_manifest" "ibm_cert_manager_subscription" {
+  count = var.enable_ibm_cert_manager ? 1 : 0
   manifest = {
     "apiVersion" = "operators.coreos.com/v1alpha1"
     "kind"       = "Subscription"
@@ -39,6 +42,7 @@ resource "kubernetes_manifest" "ibm_cert_manager_subscription" {
 }
 
 resource "kubernetes_manifest" "ibm_cert_manager_catalog_source" {
+  count = var.enable_ibm_cert_manager ? 1 : 0
   manifest = {
     "apiVersion" = "operators.coreos.com/v1alpha1"
     "kind"       = "CatalogSource"
