@@ -96,7 +96,7 @@ statement instead the previous block.
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.1.0 |
 | <a name="requirement_ibm"></a> [ibm](#requirement\_ibm) | >= 1.64.0, < 2.0.0 |
-| <a name="requirement_kubernetes"></a> [kubernetes](#requirement\_kubernetes) | >= 2.0.0 |
+| <a name="requirement_kubernetes"></a> [kubernetes](#requirement\_kubernetes) | >= 2.0.0, < 3.0.0 |
 
 ### Modules
 
@@ -123,7 +123,7 @@ No modules.
 | <a name="input_cert_manager_catalog_source_image"></a> [cert\_manager\_catalog\_source\_image](#input\_cert\_manager\_catalog\_source\_image) | Source image for the catalog source | `string` | `"icr.io/cpopen/ibm-cert-manager-operator-catalog"` | no |
 | <a name="input_cert_manager_namespace"></a> [cert\_manager\_namespace](#input\_cert\_manager\_namespace) | Name for the cert manager namespace | `string` | `"ibm-cert-manager"` | no |
 | <a name="input_cert_manager_subscription_channel"></a> [cert\_manager\_subscription\_channel](#input\_cert\_manager\_subscription\_channel) | Channel of the licensing service subscription | `string` | `"v4.2"` | no |
-| <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | The name or ID of the cluster to be used | `string` | n/a | yes |
+| <a name="input_cluster_id"></a> [cluster\_id](#input\_cluster\_id) | The name or ID of the cluster to be used | `string` | n/a | yes |
 | <a name="input_enable_ibm_cert_manager"></a> [enable\_ibm\_cert\_manager](#input\_enable\_ibm\_cert\_manager) | Option to deploy cert-manager when running terraform | `bool` | `false` | no |
 | <a name="input_enable_ibm_licensing"></a> [enable\_ibm\_licensing](#input\_enable\_ibm\_licensing) | Option to deploy licensing when running terraform | `bool` | `false` | no |
 | <a name="input_ibmcloud_api_key"></a> [ibmcloud\_api\_key](#input\_ibmcloud\_api\_key) | IBM Cloud API key | `string` | n/a | yes |

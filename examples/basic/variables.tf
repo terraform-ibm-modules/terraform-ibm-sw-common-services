@@ -1,7 +1,7 @@
 ####################
 # Cluster variables
 ####################
-variable "cluster_name" {
+variable "cluster_id" {
   type        = string
   description = "The name or ID of the cluster to be used"
   default     = "my-cluster-name"
@@ -10,6 +10,7 @@ variable "cluster_name" {
 variable "ibmcloud_api_key" {
   type        = string
   description = "IBM Cloud API key"
+  sensitive   = true
 }
 
 variable "ibmcloud_region" {
