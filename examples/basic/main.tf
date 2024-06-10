@@ -1,24 +1,17 @@
 ########################################################################################################################
-# Resource group
+# Cert-Manager deployment
 ########################################################################################################################
-
-module "resource_group" {
-  source  = "terraform-ibm-modules/resource-group/ibm"
-  version = "1.1.5"
-  # if an existing resource group is not set (null) create a new one using prefix
-  resource_group_name          = var.resource_group == null ? "${var.prefix}-resource-group" : null
-  existing_resource_group_name = var.resource_group
+data "ibm_container_cluster_config" "cluster_config" {
+  cluster_name_id = var.cluster_id
+  admin           = true
 }
 
-########################################################################################################################
-# COS instance
-########################################################################################################################
+module "ibm_common_services_prereq" {
+  source = "../.."
 
-resource "ibm_resource_instance" "cos_instance" {
-  name              = "${var.prefix}-cos"
-  resource_group_id = module.resource_group.resource_group_id
-  service           = "cloud-object-storage"
-  plan              = "standard"
-  location          = "global"
-  tags              = var.resource_tags
+  enable_ibm_cert_manager = var.enable_ibm_cert_manager
+  enable_ibm_licensing    = var.enable_ibm_licensing
+  cluster_id              = var.cluster_id
+  ibmcloud_api_key        = var.ibmcloud_api_key
+  ibmcloud_region         = var.ibmcloud_region
 }
