@@ -3,7 +3,7 @@
 ########################################################################################################################
 data "ibm_container_cluster_config" "cluster_config" {
   cluster_name_id = var.cluster_id
-  admin           = true
+  admin           = false
 }
 
 module "ibm_common_services_prereq" {
