@@ -13,17 +13,17 @@ module "resource_group" {
 ########################################################################################################################
 # Cert-Manager deployment
 ########################################################################################################################
-data "ibm_container_cluster_config" "cluster_config" {
+/*data "ibm_container_cluster_config" "cluster_config" {
   cluster_name_id = var.cluster_id
   admin           = false
-}
+}*/
 
 module "ibm_common_services_prereq" {
   source = "../.."
 
   enable_ibm_cert_manager = var.enable_ibm_cert_manager
   enable_ibm_licensing    = var.enable_ibm_licensing
-  cluster_id              = var.cluster_id
+  ##cluster_id              = var.cluster_id
   ibmcloud_api_key        = var.ibmcloud_api_key
   ibmcloud_region         = var.ibmcloud_region
 }
@@ -31,7 +31,7 @@ module "ibm_common_services_prereq" {
 ##############################################################################
 # Create VPC and Cluster
 ##############################################################################
-/*
+
 resource "ibm_is_vpc" "example_vpc" {
   name           = "${var.prefix}-vpc"
   resource_group = module.resource_group.resource_group_id
@@ -103,4 +103,4 @@ resource "time_sleep" "wait_operators" {
   depends_on      = [data.ibm_container_cluster_config.cluster_config]
   create_duration = "5s"
 }
-*/
+
