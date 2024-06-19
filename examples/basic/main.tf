@@ -24,8 +24,8 @@ module "ibm_common_services_prereq" {
   enable_ibm_cert_manager = true
   enable_ibm_licensing    = true
   ##cluster_id              = var.cluster_id
-  ibmcloud_api_key        = var.ibmcloud_api_key
-  ibmcloud_region         = var.ibmcloud_region
+  ##ibmcloud_api_key        = var.ibmcloud_api_key
+  ##ibmcloud_region         = var.ibmcloud_region
 }
 
 ##############################################################################
