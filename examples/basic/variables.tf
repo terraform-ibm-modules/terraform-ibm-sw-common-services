@@ -20,6 +20,11 @@ variable "prefix" {
   default     = "basic"
 }
 
+variable "resource_group" {
+  type        = string
+  description = "An existing resource group name to use for this example, if unset a new resource group will be created"
+  default     = null
+}
 
 ####################
 # Optional variables
