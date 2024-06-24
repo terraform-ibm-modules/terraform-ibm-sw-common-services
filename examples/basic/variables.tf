@@ -41,4 +41,3 @@ variable "resource_tags" {
 ####################
 # Optional variables
 ####################
-
