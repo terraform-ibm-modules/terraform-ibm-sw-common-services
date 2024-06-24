@@ -103,4 +103,3 @@ resource "time_sleep" "wait_operators" {
   depends_on      = [data.ibm_container_cluster_config.cluster_config]
   create_duration = "5s"
 }
-
