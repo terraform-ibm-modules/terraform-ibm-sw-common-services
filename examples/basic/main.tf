@@ -11,21 +11,25 @@ module "resource_group" {
 }
 
 ########################################################################################################################
-# Cert-Manager deployment
+# Cert-Manager and Licensing deployment
 ########################################################################################################################
 /*data "ibm_container_cluster_config" "cluster_config" {
   cluster_name_id = var.cluster_id
   admin           = false
 }*/
 
-module "ibm_common_services_prereq" {
-  source = "../.."
+resource "helm_release" "ibm_cert_manager" {
+  name          = "ibm-cert-manager"
+  chart         = "${path.module}/chart/deploy-cert-manager"
+  wait          = true
+  wait_for_jobs = true
+}
 
-  enable_ibm_cert_manager = true
-  enable_ibm_licensing    = true
-  ##cluster_id              = var.cluster_id
-  ##ibmcloud_api_key        = var.ibmcloud_api_key
-  ##ibmcloud_region         = var.ibmcloud_region
+resource "helm_release" "ibm_licensing" {
+  name          = "ibm-licensing"
+  chart         = "${path.module}/chart/deploy-licensing"
+  wait          = true
+  wait_for_jobs = true
 }
 
 ##############################################################################
