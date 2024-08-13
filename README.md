@@ -92,10 +92,7 @@ statement instead the previous block.
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ### Requirements
 
-| Name | Version |
-|------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.0 |
-| <a name="requirement_kubernetes"></a> [kubernetes](#requirement\_kubernetes) | >= 2.0.0, < 3.0.0 |
+No requirements.
 
 ### Modules
 
@@ -107,16 +104,7 @@ No resources.
 
 ### Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| <a name="input_cert_manager_catalog_source_image"></a> [cert\_manager\_catalog\_source\_image](#input\_cert\_manager\_catalog\_source\_image) | Source image for the catalog source | `string` | `"icr.io/cpopen/ibm-cert-manager-operator-catalog"` | no |
-| <a name="input_cert_manager_namespace"></a> [cert\_manager\_namespace](#input\_cert\_manager\_namespace) | Name for the cert manager namespace | `string` | `"ibm-cert-manager"` | no |
-| <a name="input_cert_manager_subscription_channel"></a> [cert\_manager\_subscription\_channel](#input\_cert\_manager\_subscription\_channel) | Channel of the licensing service subscription | `string` | `"v4.2"` | no |
-| <a name="input_enable_ibm_cert_manager"></a> [enable\_ibm\_cert\_manager](#input\_enable\_ibm\_cert\_manager) | Option to deploy cert-manager when running terraform | `bool` | `true` | no |
-| <a name="input_enable_ibm_licensing"></a> [enable\_ibm\_licensing](#input\_enable\_ibm\_licensing) | Option to deploy licensing when running terraform | `bool` | `true` | no |
-| <a name="input_licensing_catalog_source_image"></a> [licensing\_catalog\_source\_image](#input\_licensing\_catalog\_source\_image) | Source image for the catalog source | `string` | `"icr.io/cpopen/ibm-licensing-catalog"` | no |
-| <a name="input_licensing_namespace"></a> [licensing\_namespace](#input\_licensing\_namespace) | Name for the licensing namespace | `string` | `"ibm-licensing"` | no |
-| <a name="input_licensing_subscription_channel"></a> [licensing\_subscription\_channel](#input\_licensing\_subscription\_channel) | Channel of the licensing service subscription | `string` | `"v4.1"` | no |
+No inputs.
 
 ### Outputs
 

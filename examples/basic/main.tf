@@ -20,14 +20,14 @@ module "resource_group" {
 
 resource "helm_release" "ibm_cert_manager" {
   name          = "ibm-cert-manager"
-  chart         = "${path.module}/chart/deploy-cert-manager"
+  chart         = "${path.module}/../../chart/deploy-cert-manager"
   wait          = true
   wait_for_jobs = true
 }
 
 resource "helm_release" "ibm_licensing" {
   name          = "ibm-licensing"
-  chart         = "${path.module}/chart/deploy-licensing"
+  chart         = "${path.module}/../../chart/deploy-licensing"
   wait          = true
   wait_for_jobs = true
 }
