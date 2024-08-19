@@ -18,18 +18,11 @@ module "resource_group" {
   admin           = false
 }*/
 
-resource "helm_release" "ibm_cert_manager" {
-  name          = "ibm-cert-manager"
-  chart         = "${path.module}/../../chart/deploy-cert-manager"
-  wait          = true
-  wait_for_jobs = true
-}
+module "ibm_common_services_prereq" {
+  source = "../.."
 
-resource "helm_release" "ibm_licensing" {
-  name          = "ibm-licensing"
-  chart         = "${path.module}/../../chart/deploy-licensing"
-  wait          = true
-  wait_for_jobs = true
+  cluster_id                = ibm_container_vpc_cluster.cluster[0].id
+  cluster_resource_group_id = module.resource_group.resource_group_id
 }
 
 ##############################################################################
@@ -75,6 +68,7 @@ locals {
 }
 
 resource "ibm_container_vpc_cluster" "cluster" {
+  count                = 1
   name                 = var.prefix
   vpc_id               = ibm_is_vpc.example_vpc.id
   kube_version         = local.default_version
@@ -98,7 +92,8 @@ resource "ibm_container_vpc_cluster" "cluster" {
 }
 
 data "ibm_container_cluster_config" "cluster_config" {
-  cluster_name_id   = ibm_container_vpc_cluster.cluster.id
+  cluster_name_id   = ibm_container_vpc_cluster.cluster[0].id
+  config_dir        = "${path.module}/kubeconfig"
   resource_group_id = module.resource_group.resource_group_id
 }
 

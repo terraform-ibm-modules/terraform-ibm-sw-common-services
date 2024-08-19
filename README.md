@@ -95,6 +95,8 @@ statement instead the previous block.
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.0 |
+| <a name="requirement_helm"></a> [helm](#requirement\_helm) | 2.13.1 |
+| <a name="requirement_ibm"></a> [ibm](#requirement\_ibm) | >= 1.64.0, < 2.0.0 |
 
 ### Modules
 
@@ -102,11 +104,20 @@ No modules.
 
 ### Resources
 
-No resources.
+| Name | Type |
+|------|------|
+| [helm_release.ibm_cert_manager](https://registry.terraform.io/providers/hashicorp/helm/2.13.1/docs/resources/release) | resource |
+| [helm_release.ibm_licensing](https://registry.terraform.io/providers/hashicorp/helm/2.13.1/docs/resources/release) | resource |
+| [ibm_container_cluster.cluster](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/container_cluster) | data source |
+| [ibm_container_vpc_cluster.cluster](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/container_vpc_cluster) | data source |
 
 ### Inputs
 
-No inputs.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_cluster_id"></a> [cluster\_id](#input\_cluster\_id) | The ID of the cluster you wish to deploy the agents in | `string` | n/a | yes |
+| <a name="input_cluster_resource_group_id"></a> [cluster\_resource\_group\_id](#input\_cluster\_resource\_group\_id) | The Resource Group ID of the cluster | `string` | n/a | yes |
+| <a name="input_is_vpc_cluster"></a> [is\_vpc\_cluster](#input\_is\_vpc\_cluster) | Specify true if the target cluster for the observability agents is a VPC cluster, false if it is a classic cluster. | `bool` | `true` | no |
 
 ### Outputs
 
