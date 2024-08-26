@@ -13,10 +13,6 @@ module "resource_group" {
 ########################################################################################################################
 # Cert-Manager and Licensing deployment
 ########################################################################################################################
-/*data "ibm_container_cluster_config" "cluster_config" {
-  cluster_name_id = var.cluster_id
-  admin           = false
-}*/
 
 module "ibm_common_services_prereq" {
   source = "../.."
