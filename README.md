@@ -99,6 +99,12 @@ module "ibm_common_services_prereq" {
 ```
 
 ### Required IAM access policies
+You need the following permissions to run this module.
+
+- IAM Services
+  - **Kubernetes** service
+      - `Viewer` platform access
+      - `Manager` service access
 
 <!-- PERMISSIONS REQUIRED TO RUN MODULE
 If this module requires permissions, uncomment the following block and update
