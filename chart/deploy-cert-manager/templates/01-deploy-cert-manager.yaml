@@ -8,10 +8,10 @@ metadata:
 apiVersion: operators.coreos.com/v1alpha1
 kind: CatalogSource
 metadata:
-  name: ibm-cert-manager-catalog
-  namespace: openshift-marketplace
+  name: {{ .Values.cert_manager_catalog }}
+  namespace: {{ .Values.openshift_source }}
 spec:
-  displayName: ibm-cert-manager-4.2.3
+  displayName: IBM Cert Manager Catalog
   publisher: IBM
   sourceType: grpc
   image: {{ .Values.cert_manager_catalog_source_image }}
@@ -24,7 +24,7 @@ spec:
 apiVersion: operators.coreos.com/v1alpha2
 kind: OperatorGroup
 metadata:
-  name: cert-manager-operatorgroup
+  name: {{ .Values.cert_manager_operator_group }}
   namespace: {{ .Values.cert_manager_namespace }}
 
 ---
@@ -32,11 +32,11 @@ metadata:
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
-  name: ibm-cert-manager-operator
+  name: {{ .Values.cert_manager_operator }}
   namespace: {{ .Values.cert_manager_namespace }}
 spec:
   channel: {{ .Values.cert_manager_subscription_channel }}
   installPlanApproval: Automatic
-  name: ibm-cert-manager-operator
-  source: ibm-cert-manager-catalog
-  sourceNamespace: openshift-marketplace
+  name: {{ .Values.cert_manager_operator }}
+  source: {{ .Values.cert_manager_catalog }}
+  sourceNamespace: {{ .Values.openshift_source }}

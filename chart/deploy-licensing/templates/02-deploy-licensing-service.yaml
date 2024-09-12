@@ -8,8 +8,8 @@ metadata:
 apiVersion: operators.coreos.com/v1alpha1
 kind: CatalogSource
 metadata:
-  name: ibm-licensing-catalog
-  namespace: openshift-marketplace
+  name: {{ .Values.licensing_catalog }}
+  namespace: {{ .Values.openshift_source }}
 spec:
   displayName: IBM License Service Catalog
   publisher: IBM
@@ -24,22 +24,22 @@ spec:
 apiVersion: operators.coreos.com/v1
 kind: OperatorGroup
 metadata:
-  name: licensing-operatorgroup
+  name: {{ .Values.licensing_operator_group }}
   namespace: {{ .Values.licensing_namespace }}
 spec:
   targetNamespaces:
-  - ibm-licensing
+  - {{ .Values.licensing_namespace }}
 
 ---
 
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
-  name: ibm-licensing-operator-app
+  name: {{ .Values.licensing_operator }}
   namespace: {{ .Values.licensing_namespace }}
 spec:
   channel: {{ .Values.licensing_subscription_channel }}
   installPlanApproval: Automatic
-  name: ibm-licensing-operator-app
-  source: ibm-licensing-catalog
-  sourceNamespace: openshift-marketplace
+  name: {{ .Values.licensing_operator }}
+  source: {{ .Values.licensing_catalog }}
+  sourceNamespace: {{ .Values.openshift_source }}
