@@ -161,9 +161,22 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_cert_manager_catalog"></a> [cert\_manager\_catalog](#input\_cert\_manager\_catalog) | The catalog name for cert manager | `string` | `"ibm-cert-manager-catalog"` | no |
+| <a name="input_cert_manager_catalog_source_image"></a> [cert\_manager\_catalog\_source\_image](#input\_cert\_manager\_catalog\_source\_image) | The catalog source image for cert manager | `string` | `"icr.io/cpopen/ibm-cert-manager-operator-catalog"` | no |
+| <a name="input_cert_manager_namespace"></a> [cert\_manager\_namespace](#input\_cert\_manager\_namespace) | The namespace for cert manager | `string` | `"ibm-cert-manager"` | no |
+| <a name="input_cert_manager_operator"></a> [cert\_manager\_operator](#input\_cert\_manager\_operator) | The operator name for cert manager | `string` | `"ibm-cert-manager-operator"` | no |
+| <a name="input_cert_manager_operator_group"></a> [cert\_manager\_operator\_group](#input\_cert\_manager\_operator\_group) | The operator group for cert manager | `string` | `"cert-manager-operatorgroup"` | no |
+| <a name="input_cert_manager_subscription_channel"></a> [cert\_manager\_subscription\_channel](#input\_cert\_manager\_subscription\_channel) | The subscription channel for cert manager | `string` | `"v4.2"` | no |
 | <a name="input_cluster_id"></a> [cluster\_id](#input\_cluster\_id) | The ID of the cluster you wish to deploy the agents in | `string` | n/a | yes |
 | <a name="input_cluster_resource_group_id"></a> [cluster\_resource\_group\_id](#input\_cluster\_resource\_group\_id) | The Resource Group ID of the cluster | `string` | n/a | yes |
 | <a name="input_is_vpc_cluster"></a> [is\_vpc\_cluster](#input\_is\_vpc\_cluster) | Specify true if the target cluster for the observability agents is a VPC cluster, false if it is a classic cluster. | `bool` | `true` | no |
+| <a name="input_licensing_catalog"></a> [licensing\_catalog](#input\_licensing\_catalog) | The catalog name for licensing | `string` | `"ibm-licensing-catalog"` | no |
+| <a name="input_licensing_catalog_source_image"></a> [licensing\_catalog\_source\_image](#input\_licensing\_catalog\_source\_image) | The catalog source image for licensing | `string` | `"icr.io/cpopen/ibm-licensing-catalog"` | no |
+| <a name="input_licensing_namespace"></a> [licensing\_namespace](#input\_licensing\_namespace) | The namespace for licensing | `string` | `"ibm-licensing"` | no |
+| <a name="input_licensing_operator"></a> [licensing\_operator](#input\_licensing\_operator) | The operator name for licensing | `string` | `"ibm-licensing-operator-app"` | no |
+| <a name="input_licensing_operator_group"></a> [licensing\_operator\_group](#input\_licensing\_operator\_group) | The operator group for licensing | `string` | `"licensing-operatorgroup"` | no |
+| <a name="input_licensing_subscription_channel"></a> [licensing\_subscription\_channel](#input\_licensing\_subscription\_channel) | The subscription channel for licensing | `string` | `"v4.2"` | no |
+| <a name="input_openshift_source"></a> [openshift\_source](#input\_openshift\_source) | The openshift source for the subscriptions | `string` | `"openshift-marketplace"` | no |
 
 ### Outputs
 

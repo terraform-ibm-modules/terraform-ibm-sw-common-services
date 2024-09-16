@@ -1,7 +1,7 @@
 # NOTE: Mock values added here for helm linter to pass. Actual values are set in main.tf
 cert_manager_subscription_channel: v4.2
-cert_manager_catalog_source_image: icr.io/cpopen/ibm-cert-manager-operator-catalog
-#cert_manager_catalog_source_image: icr.io/cpopen/ibm-cert-manager-operator-catalog@sha256:9f1f8e6493ba1f356e9a1894225e1f03bf64d3716fa282e2f169c3f31042fee3
+#cert_manager_catalog_source_image: icr.io/cpopen/ibm-cert-manager-operator-catalog
+cert_manager_catalog_source_image: icr.io/cpopen/ibm-cert-manager-operator-catalog@sha256:9f1f8e6493ba1f356e9a1894225e1f03bf64d3716fa282e2f169c3f31042fee3
 cert_manager_namespace: ibm-cert-manager
 cert_manager_catalog: ibm-cert-manager-catalog
 cert_manager_operator: ibm-cert-manager-operator
