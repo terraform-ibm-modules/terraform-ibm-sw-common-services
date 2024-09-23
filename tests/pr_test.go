@@ -49,7 +49,6 @@ func TestRunBasicAgentsVPCKubernetes(t *testing.T) {
 	t.Parallel()
 
 	options := setupOptions(t, "sw-common", basicExampleDir)
-	options.TerraformVars["is_openshift"] = false
 
 	output, err := options.RunTestConsistency()
 	assert.Nil(t, err, "This should not have errored")

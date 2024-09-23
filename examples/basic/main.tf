@@ -48,7 +48,7 @@ resource "ibm_is_subnet" "testacc_subnet" {
 }
 
 resource "ibm_resource_instance" "cos_instance" {
-  count             = var.is_openshift ? 1 : 0
+  count             = 1
   name              = "${var.prefix}-cos"
   service           = "cloud-object-storage"
   plan              = "standard"
@@ -60,7 +60,7 @@ resource "ibm_resource_instance" "cos_instance" {
 # Lookup the current default kube version
 data "ibm_container_cluster_versions" "cluster_versions" {}
 locals {
-  default_version = var.is_openshift ? "${data.ibm_container_cluster_versions.cluster_versions.default_openshift_version}_openshift" : data.ibm_container_cluster_versions.cluster_versions.default_kube_version
+  default_version = "${data.ibm_container_cluster_versions.cluster_versions.default_openshift_version}_openshift"
 }
 
 resource "ibm_container_vpc_cluster" "cluster" {
@@ -70,8 +70,8 @@ resource "ibm_container_vpc_cluster" "cluster" {
   kube_version         = local.default_version
   flavor               = "bx2.4x16"
   worker_count         = "2"
-  entitlement          = var.is_openshift ? "cloud_pak" : null
-  cos_instance_crn     = var.is_openshift ? ibm_resource_instance.cos_instance[0].id : null
+  entitlement          = "cloud_pak"
+  cos_instance_crn     = ibm_resource_instance.cos_instance[0].id
   force_delete_storage = true
   wait_till            = "Normal"
   zones {
