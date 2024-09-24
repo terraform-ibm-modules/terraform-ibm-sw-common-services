@@ -1,16 +1,16 @@
-########################################################################################################################
-# Input variables
-########################################################################################################################
+####################
+# Cluster variables
+####################
 
 variable "ibmcloud_api_key" {
   type        = string
-  description = "The IBM Cloud API Key"
+  description = "IBM Cloud API key"
   sensitive   = true
 }
 
 variable "region" {
   type        = string
-  description = "Region to provision all resources created by this example"
+  description = "IBM Cloud region where all resources will be deployed"
   default     = "us-south"
 }
 
@@ -22,7 +22,7 @@ variable "prefix" {
 
 variable "resource_group" {
   type        = string
-  description = "The name of an existing resource group to provision resources in to. If not set a new resource group will be created using the prefix variable"
+  description = "An existing resource group name to use for this example, if unset a new resource group will be created"
   default     = null
 }
 

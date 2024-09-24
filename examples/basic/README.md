@@ -1,11 +1,6 @@
-# Basic example
+# Basic example of using cert-manager and licensing
 
-<!--
-The basic example should call the module(s) stored in this repository with a basic configuration.
-Note, there is a pre-commit hook that will take the title of each example and include it in the repos main README.md.
-The text below should describe exactly what resources are provisioned / configured by the example.
--->
+When applying, all cluster variables must be set either in the `variables.tf` file or in the command line so that the cluster can be properly accessed
 
-An end-to-end basic example that will provision the following:
-- A new resource group if one is not passed in.
-- A new Cloud Object Storage instance.
+Command line example:
+`TF_VAR_ibmcloud_api_key=$ibmcloud_api_key terraform apply`

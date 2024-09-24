@@ -1,0 +1,5 @@
+apiVersion: v2
+name: ibm-cert-manager
+description: Deploy ibm-cert-manager
+type: application
+version: 1.0.0
