@@ -1,6 +1,6 @@
 # NOTE: Mock values added here for helm linter to pass. Actual values are set in main.tf
 licensing_subscription_channel: v4.2
-licensing_catalog_source_image: icr.io/cpopen/ibm-licensing-catalog@sha256:e1e2651f460bc32f731b1bb13a7a1b1698374f403a7fed6bccfc2b8eef4ba5e1
+licensing_catalog_source_image: icr.io/cpopen/ibm-licensing-catalog@sha256:f2f9db1ab89f5a5e82fb715a8670282e75d3cc62f837687c2e9cb29a3bdce201
 licensing_namespace: ibm-licensing
 licensing_catalog: ibm-licensing-catalog
 licensing_operator: ibm-licensing-operator-app
