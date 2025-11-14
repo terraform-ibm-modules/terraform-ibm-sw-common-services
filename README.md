@@ -28,7 +28,7 @@ This module deploys the `cert-manager` and `licensing` operators to a Kubernetes
 ## Overview
 * [terraform-ibm-sw-common-services](#terraform-ibm-sw-common-services)
 * [Examples](./examples)
-    * [Basic example of using cert-manager and licensing](./examples/basic)
+    * <div style="display: inline-block;"><a href="./examples/basic">Basic example of using cert-manager and licensing</a></div> <div style="display: inline-block; vertical-align: middle;"><a href="https://cloud.ibm.com/schematics/workspaces/create?workspace_name=scs-basic-example&repository=github.com/terraform-ibm-modules/terraform-ibm-sw-common-services/tree/main/examples/basic" target="_blank"><img src="https://cloud.ibm.com/media/docs/images/icons/Deploy_to_cloud.svg" alt="Deploy to IBM Cloud button"></a></div>
 * [Contributing](#contributing)
 <!-- END OVERVIEW HOOK -->
 
